@@ -79,4 +79,3 @@ if (user.role === 'admin' && action === 'delete') {
 // api.isLoading
 // new Date().toLocaleTimeString()
 // Concepto clave: Debugging efectivo combina herramientas, estrategia y paciencia.
-

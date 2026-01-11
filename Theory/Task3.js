@@ -14,8 +14,8 @@ function isAdult(age) {
 // ✅ Con cobertura completa
 describe('isAdult', () => {
   test('retorna true para edad >= 18', () => {
-    expect(isAdult(18)).toBe(true);  // Cubre línea 2
-    expect(isAdult(25)).toBe(true);  // Cubre línea 2
+    expect(isAdult(18)).toBe(true); // Cubre línea 2
+    expect(isAdult(25)).toBe(true); // Cubre línea 2
   });
 
   test('retorna false para edad < 18', () => {
@@ -27,10 +27,12 @@ describe('isAdult', () => {
 
 // ❌ Cobertura incompleta de branches
 function getDiscount(price, isVip) {
-  if (isVip) {           // Branch 1: true
-    return price * 0.1;  // Esta línea se cubre
-  } else {               // Branch 2: false (NUNCA se ejecuta)
-    return 0;            // Esta línea NO se cubre
+  if (isVip) {
+    // Branch 1: true
+    return price * 0.1; // Esta línea se cubre
+  } else {
+    // Branch 2: false (NUNCA se ejecuta)
+    return 0; // Esta línea NO se cubre
   }
 }
 
@@ -61,36 +63,36 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
-    '!src/index.js',           // Archivo de entrada
+    '!src/index.js', // Archivo de entrada
     '!src/**/*.test.{js,jsx,ts,tsx}', // Tests
     '!src/**/*.spec.{js,jsx,ts,tsx}', // Specs
     '!src/**/*.stories.{js,jsx,ts,tsx}', // Storybook
-    '!src/**/types/**',        // Archivos de tipos
+    '!src/**/types/**', // Archivos de tipos
   ],
   coverageDirectory: 'coverage',
   coverageReporters: [
-    'text',      // Consola
-    'html',      // HTML detallado
-    'lcov',      // Para CI/CD
-    'json'       // Para herramientas externas
+    'text', // Consola
+    'html', // HTML detallado
+    'lcov', // Para CI/CD
+    'json', // Para herramientas externas
   ],
   coverageThreshold: {
     global: {
       branches: 80,
       functions: 80,
       lines: 80,
-      statements: 80
+      statements: 80,
     },
     // Umbrales específicos por archivo/carpeta
     'src/components/': {
       branches: 90,
-      functions: 90
+      functions: 90,
     },
     'src/utils/': {
       branches: 95,
-      functions: 95
-    }
-  }
+      functions: 95,
+    },
+  },
 };
 // Interpretación del reporte:
 
